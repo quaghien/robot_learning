@@ -21,11 +21,8 @@ class ArgParser(object):
                 is_key = self._is_key(str)
                 if (is_key):
                     if (curr_key != ''):
-                        if (curr_key in self._table):
-                            raise ValueError(f"Duplicate argument detected: --{curr_key}")
-                        else:
+                        if (curr_key not in self._table):
                             self._table[curr_key] = vals
-
 
                     vals = []
                     curr_key = str[2::]
